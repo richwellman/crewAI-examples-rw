@@ -1,4 +1,12 @@
 from typing import List
+from dotenv import load_dotenv
+import os
+load_dotenv()  # take environment variables from .env.
+langtrace_api_key = os.environ.get("LANGTRACE_API_KEY")
+# Import it into your project
+from langtrace_python_sdk import langtrace # Must precede any llm module imports
+langtrace.init(api_key = langtrace_api_key)
+
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 

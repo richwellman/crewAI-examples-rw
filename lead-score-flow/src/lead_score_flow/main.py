@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import asyncio
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
 
 from crewai.flow.flow import Flow, listen, or_, router, start
 from pydantic import BaseModel
